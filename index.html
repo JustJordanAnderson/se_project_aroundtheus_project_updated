@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Around the US</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scenic views all over the US" />
+    <meta
+      name="keywords"
+      content="scenic views, mountain views, nature, landscapes"
+    />
+    <meta name="author" content="Jordan Anderson" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header page__section">
+        <img
+          src="./images/logo.svg"
+          alt="Around The US logo"
+          class="header__logo"
+        />
+      </header>
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            src="./images/jacques-cousteau.png"
+            alt="Avatar"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title">Jacques Cousteau</h1>
+            <button
+              class="profile__edit-button"
+              id="profile-edit-button"
+              type="button"
+              aria-label="edit profile username"
+            ></button>
+            <p class="profile__description">Explorer</p>
+          </div>
+          <button
+            class="profile__add-button"
+            type="button"
+            aria-label="add button"
+          ></button>
+        </section>
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+        </section>
+      </main>
+      <footer class="footer page__section">
+        <p class="footer__copyright">&#169; 2024 Around the US</p>
+      </footer>
+    </div>
+      
+    <div class="modal" id="profile-edit-modal">
+      <div class="modal__container">
+        <button class="modal__close" id="profile-close-button"></button>
+        <p class="modal__heading">Edit Profile</p>
+        <form class="modal__form" id="profile-form" name="profile-form">
+          <input class="modal__input" id="modal-title" type="text" name = "title" placeholder="Jacques Cousteau"/>
+          <input class="modal__input" id="modal-description" type="text" name = "description" placeholder="Explorer"/>
+          <button class="modal__button">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <p class="modal__heading">New Place</p>
+        <form class="modal__form" id="add-card-form" name="profile-form">
+          <input class="modal__input modal__input_type_title" type="text" name = "title" placeholder="Title"/>
+          <input class="modal__input modal__input_type_url" type="text" name = "url" placeholder="Image URL"/>
+          <button class="modal__button">Save</button>
+        </form>
+      </div>
+    </div>
+    
+    <template id="card-template">
+      <li class="card">
+        <img class="card__image" src="#" alt="" />
+        <button class="card__delete-button" type="button"></button>
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button" type="button"></button>
+        </div>
+      </li>
+    </template>
+
+    <div class="modal" id="preview-image-modal">
+      <div class="modal__container modal__container_type_preview">
+        <img class="modal__image" src="#" alt="" />
+        <button
+          type="button"
+          class="modal__close modal__close_type_preview"
+          id="modal-close-button-preview"
+        ></button>
+        <h3 class="modal__title"></h3>
+      </div>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
