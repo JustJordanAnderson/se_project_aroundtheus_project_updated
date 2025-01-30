@@ -63,7 +63,7 @@ function handleProfileFormSubmit(evt) {
 
     profileTitle.textContent = profileTitleInput.value;
     profileDescription.textContent = profileDescriptionInput.value;
-    closeModal();
+    closeModal(profileEditModal);
 }
 
 function getCardElement(data) {
@@ -111,6 +111,7 @@ addCardForm.addEventListener('submit', (evt) => {
     const cardEl = getCardElement({name, link});
     cardListEl.prepend(cardEl);
     closeModal(addCardModal); 
+    addCardForm.reset();
 });
 
 addNewCardButton.addEventListener('click', () => openModal(addCardModal));
